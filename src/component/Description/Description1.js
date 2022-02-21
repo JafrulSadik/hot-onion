@@ -19,28 +19,13 @@ const Description1 = () => {
     const buttonClick = (e) => {
 
         if(e.target.name === 'card1'){
-            if(!card1){
-                setCard1(true)
-            }
-            else{
-                setCard1(false);
-            }
+            !card1 ? setCard1(true) : setCard1(false);
         }
-        if(e.target.name === 'card2'){
-            if(!card2){
-                setCard2(true)
-            }
-            else{
-                setCard2(false);
-            }
+        else if(e.target.name === 'card2'){
+            !card2 ? setCard2(true) : setCard2(false); 
         }
-        if(e.target.name === 'card3'){
-            if(!card3){
-                setCard3(true)
-            }
-            else{
-                setCard3(false);
-            }
+        else{
+            !card3 ? setCard3(true) : setCard3(false);
         }
     }
 
@@ -53,7 +38,7 @@ const Description1 = () => {
                 <p>El Diablo’s cook top is nothing short of extraordinary. Located on a Spanish Island, this restaurant cooks its meals over an active volcanic hole in the ground.</p>
             </div>
 
-            <div className='flex flex-row px-[7%] mt-4 justify-between pb-10 items-center'>
+            <div className='flex flex-row px-[7%] mt-4 justify-between pb-10 '>
 
 
                 <div className='w-[30%] flex flex-col rounded-xl shadow-md transform hover:scale-105 duration-300 hover:drop-shadow-xl h-min bg-white'>
