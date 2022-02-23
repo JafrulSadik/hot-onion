@@ -4,7 +4,7 @@ module.exports = {
   ],
   theme: {
     screens: {
-      'sm': {'min': '380px', 'max': '549px'},
+      'sm': {'min': '350px', 'max': '549px'},
 
       'md': {'min': '550px', 'max': '750px'},
 
@@ -14,7 +14,6 @@ module.exports = {
 
       '2xl': {'min': '1536px'}
     },
-    extend: {},
   },
   plugins: [],
 }

@@ -1,11 +1,6 @@
 #bannar{
     background-image: url("./bannerbackground.png");
     background-repeat: no-repeat;
-
-    height: 500px;
-    background-size: cover;
-    background-position: center;
-    padding: 0px 50px;
 }
 
 #bannar h1{
