@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import data from '../../JSON/data.json';
 import Card from '../Card/Card';
 
@@ -94,7 +95,7 @@ const FoodSelection = () => {
 
             <div className='flex flex-wrap justify-between px-36 flex-row sm:px-6 sm:pt-7'>
                     {
-                        card.map((cards) => <Card value={cards}></Card> )
+                        card.map((cards) => <Card value={cards} key={cards.id}></Card> )
                     }
             </div>
 

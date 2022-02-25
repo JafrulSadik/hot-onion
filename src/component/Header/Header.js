@@ -2,13 +2,14 @@ import React from 'react';
 import logo from '../../images/logo2.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCartShopping } from '@fortawesome/free-solid-svg-icons';
+import { Link } from 'react-router-dom';
 
 
 const Header = () => {
     return (
         <div className='flex justify-between px-20 items-center sm:px-1 sm:mx-5 sm:my-2'>
                 <div className=''>
-                    <img className='w-40 py-4 ml-10 sm:w-28 sm:py-0 sm:ml-0' src={logo} alt="" />
+                    <Link to="/"><img className='w-40 py-4 ml-10 sm:w-28 sm:py-0 sm:ml-0' src={logo} alt="" /></Link>
                 </div>
                 <div className='flex flex-row p-4  space-x-4 sm:p-1 sm:space-x-2'>
 
