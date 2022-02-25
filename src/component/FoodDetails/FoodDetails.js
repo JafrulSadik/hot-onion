@@ -19,6 +19,10 @@ const FoodDetails = () => {
     const relatedData = fakeData.filter((value) => value.catagory === catagory);
 
     const [items, setItem] = useState(0);
+    const [enable, setEnable] = useState({
+        right : true,
+        left : false
+    })
 
     const handleClick = (e) => {
         let number;
@@ -37,19 +41,20 @@ const FoodDetails = () => {
 
 
     function handleButtonClick (event){
-        console.log(items);
         if(event === 'right'){
             if(items < relatedData.length-1){
                 let value = items + 1;
                 setItem(value++);
-                console.log(items)
+                
+                (value === relatedData.length) ? setEnable({right : false,left : true}): setEnable({right : true,left : true})
             }
         }
         if(event === "left"){
             if(items > 0){
                 let value = items - 1;
                 setItem(value--);
-                console.log(items)
+
+                (value < 0) ? setEnable({right : true,left : false}): setEnable({right : true,left : true})
             }
         }
     }
@@ -84,13 +89,13 @@ const FoodDetails = () => {
 
                 <div className='flex flex-row items-center w-full justify-center'>
                     <div >
-                        <button onClick={() => handleButtonClick('left')} type='click' className='pl-3 py-3'><FontAwesomeIcon className='text-[#f83447]' icon={faAngleLeft} /></button>
+                        <button onClick={() => handleButtonClick('left')} type='click' className='pl-3 py-3'><FontAwesomeIcon className={(enable.left) ? "text-[#f83447]" : "text-[#f8344841]" }size='xl' icon={faAngleLeft} /></button>
                     </div>
                     <div className='p-10'>
                         <Link to={`/${relatedData[items].catagory}/${relatedData[items].id}`}> <img className='w-36' src={relatedData[items].image} alt="" /></Link>
                     </div>
                     <div>
-                        <button onClick={() => handleButtonClick('right')}  type='click' className='pr-3 py-3'><FontAwesomeIcon className='text-[#f83447]' icon={faAngleRight} /></button>
+                        <button onClick={() => handleButtonClick('right')}  type='click' className='pr-3 py-3'><FontAwesomeIcon className={(enable.right) ? "text-[#f83447]" : "text-[#f8344841]" } size='xl' icon={faAngleRight} /></button>
                     </div>
                 </div>
 
